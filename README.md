@@ -119,7 +119,7 @@ notify <msg> – Envía notificación del sistema.
 help – Muestra ayuda.
 
 🖥️ Uso de GUI segura
-bash                                                                                                                           <3~<3~<3 i Love P.K. <3~<3~<3 
+bash                                                                         
 Copiar código
 ./CC.sh gui-safe neon   # Neon theme
 ./CC.sh gui-safe dark   # Dark theme
@@ -148,4 +148,5 @@ Integración completa de todos los comandos CC desde GUI y CLI.
 
 Corrección de errores en wrappers de scripts y módulos internos.
 
-MLM ASSOCIATE | LEARN LAB STUDIO 
+MLM ASSOCIATE  |  LEARN LAB STUDIO 
+  <3~<3~<3 i Love P.K. <3~<3~<3 
