@@ -38,6 +38,7 @@ CC/
 ```bash
 git clone git@github.com:Migue1-N4varreTe/Herramientas.git CC
 cd CC
+find ~/CC -type f -name "*.sh" -exec chmod +x {} \;
 chmod +x CC.sh
 Asegúrate de tener Python 3 y un entorno gráfico si quieres usar la GUI.
 
