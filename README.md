@@ -1,102 +1,151 @@
-# 🔮 Command Core (CC) v4.3
+# 🔮 Command Core (CC) v4.3 — Núcleo Unificado
 
-**Command Core** es el núcleo de automatización y orquestación para tus proyectos de desarrollo, deployments, mantenimiento y telemetría, todo unificado en un solo script con GUI/TUI y módulos integrados.
+**Autor:** Migue1-N4varreTe  
+**Fecha de actualización:** 2025-11-05  
 
----
-
-## 🌟 Features principales
-
-- **Core & Build:** Inicialización de proyectos, compilación, desarrollo y despliegue.
-- **Mantenimiento:** Reparación automática, optimización de sistema y limpieza de logs.
-- **Backups & Restore:** Backups rápidos de proyectos y restauración segura.
-- **Telemetry & Metrics:** Escaneo de logs, métricas estimadas de builds/deploys y reportes visuales.
-- **GUI/TUI:** Interfaz gráfica “Ricitos Neon” elegante y fallback TUI para terminales.
-- **System Utilities:** Verificación de dependencias, chequeo de hardware y actualización del sistema.
-- **Integración modular:** Scripts externos y fallback internos, con prioridad a implementaciones locales.
+Command Core (CC) es un orquestador unificado para gestión de proyectos, automatización de builds, deploys, backups, telemetría y mantenimiento del sistema.
 
 ---
 
-## 🖌 Branding “Ricitos Neon”
+## 🔹 Características principales
 
-- **Tema oscuro elegante**
-- Colores eléctricos azul/cian
-- Bordes suaves y tipografía **Fira Code**
-- Diseño GUI interactivo con TUI fallback
+- Gestión de proyectos en modo local o global.
+- GUI segura (`gui-safe`) con soporte de temas neon y dark.
+- Fallback TUI para entornos sin display.
+- Integración de todos los módulos (`build`, `dev`, `deploy`, `backup`, `telemetry`, `repair`, `optimize`).
+- Registro de logs y reportes visuales en `~/command_core_logs`.
+- Backups automáticos en `~/CommandCore_Backups`.
+- Comandos internos y wrappers para scripts externos, con fallback seguro.
+
+---
+
+## 📁 Estructura de directorios
+
+CC/
+├── CC.sh
+├── core/
+├── deploy/
+├── godot/
+├── gui/
+├── maintenance/
+├── system/
+└── telemetry/
 
 ---
 
 ## ⚡ Instalación
 
 ```bash
-# Clonar repositorio
-git clone git@github.com:Migue1-N4varreTe/Herramientas.git ~/scripts
+git clone git@github.com:Migue1-N4varreTe/Herramientas.git CC
+cd CC
+chmod +x CC.sh
+Asegúrate de tener Python 3 y un entorno gráfico si quieres usar la GUI.
 
-# Dar permisos de ejecución
-chmod -R +x ~/scripts
+🚀 Comandos principales
+bash
+Copiar código
+./CC.sh <comando> [subcomando|opciones]
+Core
+init <perfil> – Inicializa un proyecto.
 
-# Ejecutar núcleo
-~/scripts/CC.sh help
+build [rebuild|diagnose] – Compila el proyecto.
 
-# Ver ayuda
-CC.sh help
+dev – Arranca entorno de desarrollo.
 
-# Estado del sistema
-CC.sh status
+deploy – Despliega proyecto.
 
-# Comprobación de dependencias
-CC.sh syscheck
+update [all] – Actualiza CC o proyectos.
 
-# Modo GUI
-CC.sh gui
+update-core – Actualiza solo el núcleo CC.
 
-# Backup automático
-CC.sh auto-backup
+Maintenance
+repair [gui] – Repara sistema o GUI.
 
-# Deploy y sincronización
-CC.sh deploy
-CC.sh deploy-sync
+maintain [normal|deep|gui] – Optimización y limpieza.
 
-# Actualización del núcleo
-CC.sh update-core
+system-repair – Reparación avanzada.
 
-scripts/
-├── core/
-├── deploy/
-├── maintenance/
-├── godot/
-├── system/
-├── telemetry/
-├── system/gui/cc_dashboard.py
-└── CC.sh
+optimize – Optimiza almacenamiento y sistema.
 
-🛠 Requisitos
+Backup
+auto-backup – Crea backup automático.
 
-Bash 5+
+backup restore <archivo> – Restaura backup.
 
-Python3 (para GUI)
+Deploy / Sync
+deploy-sync – Sincroniza repositorios.
 
-Git, rsync, curl, dotnet, Node.js, pnpm, Godot 4 (opcional)
+staging – Prepara staging.
 
-Linux (probado en Zorin, Ubuntu)
+netlify – Push a Netlify.
 
-💡 Notas
+render – Push a Render.
 
-GUI requiere entorno gráfico (DISPLAY).
+Telemetry & Metrics
+metrics [gui] – Métricas rápidas.
 
-Si no hay GUI disponible, cae automáticamente en TUI.
+telemetry-report – Genera reporte de telemetría.
 
-Logs y reportes se generan en: ~/command_core_logs/ y backups en ~/CommandCore_Backups/.
+telemetry-scan – Escanea telemetría.
 
-Integración continua: módulos externos pueden colocarse en ~/scripts/<module>/ y el core los prioriza.
+telemetry-clean – Limpia logs y telemetría antiguos.
 
-🔗 Contribuciones
+System
+status – Estado rápido del sistema.
 
-Puedes contribuir creando módulos nuevos, optimizando scripts o proponiendo mejoras de GUI/TUI.
+syscheck – Verifica dependencias.
 
-📜 Licencia
+system-update – Actualiza sistema operativo.
 
-CC v4.3 — Uso personal y educativo. Para uso comercial, contacta al autor.
+system-health – Revisa salud general.
 
-MLM ASSOCIATE / LEARN LAB STUDIO 
+check-disk – Verifica discos y SMART.
 
- <3 <3  i Love P.k. <3 <3 
+rotate-logs – Comprime logs antiguos.
+
+system-info – Información detallada del sistema.
+
+user-audit – Auditoría de usuarios.
+
+export – Exporta proyectos y CC completo.
+
+Other
+gui – Lanza GUI interactiva.
+
+gui-safe [dark|neon] – Lanza GUI segura con tema opcional.
+
+notify <msg> – Envía notificación del sistema.
+
+help – Muestra ayuda.
+
+🖥️ Uso de GUI segura
+bash                                                                                                                           <3~<3~<3 i Love P.K. <3~<3~<3 
+Copiar código
+./CC.sh gui-safe neon   # Neon theme
+./CC.sh gui-safe dark   # Dark theme
+Si no hay entorno gráfico, se lanza automáticamente el TUI (CLI friendly).
+
+📄 Logs y backups
+Logs: ~/command_core_logs
+
+Reportes visuales: ~/command_core_logs/visual_reports
+
+Backups: ~/CommandCore_Backups
+
+⚠️ Recomendaciones
+Ejecutar ./CC.sh system-update periódicamente.
+
+Revisar métricas con ./CC.sh metrics gui.
+
+Mantener Python 3 actualizado si se usa la GUI.
+
+🛠️ Notas de la versión v4.3
+GUI segura (gui-safe) implementada con fallback TUI.
+
+Soporte de temas neon y dark.
+
+Integración completa de todos los comandos CC desde GUI y CLI.
+
+Corrección de errores en wrappers de scripts y módulos internos.
+
+MLM ASSOCIATE | LEARN LAB STUDIO 
