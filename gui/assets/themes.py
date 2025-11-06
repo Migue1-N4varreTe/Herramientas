@@ -1,0 +1,10 @@
+NEON_THEME = {
+    "PRIMARY_COLOR": "#00FFFF",
+    "BG_COLOR": "#111111",
+    "TEXT_COLOR": "#FFFFFF"
+}
+DARK_THEME = {
+    "PRIMARY_COLOR": "#888888",
+    "BG_COLOR": "#111111",
+    "TEXT_COLOR": "#FFFFFF"
+}
